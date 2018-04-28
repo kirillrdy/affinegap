@@ -1,11 +1,10 @@
-package main
+package affinegap
 
 import (
-	"log"
 	"math"
 )
 
-func affineGapDistance(string_a, string_b string) float64 {
+func AffineGapDistance(string_a, string_b string) float64 {
 
 	const matchWeight = 1
 	const mismatchWeight = 11
@@ -73,18 +72,14 @@ func affineGapDistance(string_a, string_b string) float64 {
 
 	return distance
 }
-func normalizedAffineGapDistance(string1, string2 string) float64 {
+func NormalizedAffineGapDistance(string1, string2 string) float64 {
 
 	length1 := len(string1)
 	length2 := len(string2)
 
 	normalizer := float64(length1 + length2)
 
-	distance := affineGapDistance(string1, string2)
+	distance := AffineGapDistance(string1, string2)
 
 	return distance / normalizer
-}
-
-func main() {
-	log.Println(normalizedAffineGapDistance("abc", "xbc"))
 }
