@@ -72,7 +72,7 @@ func AffineGapDistance(string_a, string_b string) float64 {
 
 	return distance
 }
-func NormalizedAffineGapDistance(string1, string2 string) float64 {
+func NormalisedAffineGapDistance(string1, string2 string) float64 {
 
 	length1 := len(string1)
 	length2 := len(string2)
