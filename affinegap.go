@@ -80,6 +80,11 @@ func NormalisedAffineGapDistance(string1, string2 string) float64 {
 	normalizer := float64(length1 + length2)
 
 	distance := AffineGapDistance(string1, string2)
+	result := distance / normalizer
 
-	return distance / normalizer
+	if math.IsNaN(result) {
+		return 0
+	} else {
+		return result
+	}
 }
